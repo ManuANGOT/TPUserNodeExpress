@@ -13,19 +13,13 @@ export default class UserService {
     return this.repo.getAll();
   };
 
-  getById1 = (id: number): UserModel => {
+  getById = (id: number): UserModel => {
     const resu = this.repo.getAll().find((item) => item.id == id);
     if (!resu) throw "Cet id n'existe pas !!!";
     return resu;
   };
 
-  // filter renvoie toutes les occurences qui marchent avec la condition
-  getById2 = (id: number): UserModel => {
-    const resu = this.repo.getAll().filter((item) => item.id == id)[0];
-    if (!resu) throw "id non trouvé";
-    return resu;
-  };
-
+  
   deleteById = (id: number): void => {
     this.repo.deleteById(id);
   };
@@ -38,22 +32,22 @@ export default class UserService {
     return newUser;
   };
 
-  /** 
-  updateTodo = (item: TodoModel, id: number): TodoModel => {
+
+  updateUser = (item: UserModel, id: number): UserModel => {
     if (item.id != id) throw "to do incorrecte";
     const exist = this.getAll().find((data) => data.id == item.id);
     if (!exist) {
-      const todo = new TodoModel(item.task, item.completed);
-      this.repo.createTodo(todo);
-      return todo;
+      const user = new UserModel(item.id, item.nom, item.prenom, item.date_de_naissance, item.date_inscription, item.nationalite);
+      this.repo.createUser(user);
+      return user;
     } else {
-      const todo = new TodoModel(item);
-      const index = this.getAll().findIndex((item) => item.id == todo.id);
-      this.repo.update(todo, index);
-      return todo;
+      const user = new UserModel(item.id, item.nom, item.prenom, item.date_de_naissance, item.date_inscription, item.nationalite);
+      const index = this.getAll().findIndex((item) => item.id == user.id);
+      this.repo.update(user, index);
+      return user;
     }
   };
-
+  /** 
   patch = (id: number, item: Partial<IPatch>): TodoModel => {
     const index = this.getAll().findIndex((data) => data.id == id);
 

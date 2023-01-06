@@ -23,13 +23,13 @@ export default class UserRepository {
   createUser = (item: UserModel): void => {
     this.users.push(item);
   };
-  /** 
+
   update = (item: UserModel, index:number): void => {
     this.users[index] = item
 
   };
-
-  patch = (index:number, item: Partial<IPatch>): UserModel => {
+/** 
+  patch = (index:number): UserModel => {
     this.users[index].patch(item)
     return this.users[index]
   }*/
