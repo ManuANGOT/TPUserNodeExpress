@@ -47,8 +47,8 @@ export default class UserService {
     }
   };
   
-  /** 
-  patch = (id: number): UserModel => {
+/** 
+  patchUser = (id: number): UserModel => {
     const index = this.getAll().findIndex((data) => data.id == id);
 
     if (!index) throw "id inexistante";
@@ -57,4 +57,5 @@ export default class UserService {
     return data;
   };
   */
+ 
 }

@@ -52,10 +52,11 @@ export default class UserRepository {
   update = (item: UserModel, index: number): void => {
     this.users[index] = item;
   };
-
-  /**
-  patch = (index: number): UserModel => {
+  
+  /** 
+  patchUser = (index: number): UserModel => {
     this.users[index].patch();
     return this.users[index];
-  }; */
+  };
+   */
 }
