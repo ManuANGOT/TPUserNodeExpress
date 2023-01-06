@@ -55,8 +55,8 @@ export default class UserRepository {
   
   /** 
   patchUser = (index: number): UserModel => {
-    this.users[index].patch();
+    this.users[index].patch(data:UserModel);
     return this.users[index];
   };
-   */
+  */
 }

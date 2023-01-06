@@ -22,6 +22,7 @@ export default class UserModel {
     if (data.prenom) this.prenom = data.prenom;
     if (data.date_de_naissance) this.date_de_naissance = data.date_de_naissance;
     if (data.date_inscription) this.date_inscription = data.date_inscription;
+    if (data.nationalite) this.nationalite=data.nationalite;
   };
   
 }

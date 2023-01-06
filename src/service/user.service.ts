@@ -56,6 +56,6 @@ export default class UserService {
     const data = this.repo.patch(index);
     return data;
   };
-  */
- 
+*/
+
 }

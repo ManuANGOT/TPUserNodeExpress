@@ -68,11 +68,11 @@ export default class UserController {
     }
   };
 
-  /** 
+/** 
   patch = async (req: Request, res: Response) => {
     const id = req.params.id;
     const data = this.service.patchUser(+id);
     res.send(data);
   };
-  */
+*/
 }
