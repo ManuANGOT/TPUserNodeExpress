@@ -8,7 +8,7 @@ export default class UserModel {
   
 
   constructor(id: number, nom: string, prenom: string, date_de_naissance: string, date_inscription: Date, nationalite: string) {
-    this.id = id;
+    this.id = id++;
     this.nom = nom;
     this.prenom = prenom;
     this.date_de_naissance = date_de_naissance;

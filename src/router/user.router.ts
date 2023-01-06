@@ -10,9 +10,8 @@ const controller = new UserController(service)
 const router = express.Router()
 router.get("/", controller.getAll)
 router.get("/:id", controller.getById)
-
-//router.delete("/:id", controller.deleteById)
-//router.post("/", controller.create)
+router.delete("/:id", controller.deleteById)
+router.post("/", controller.createUser)
 //router.put("/:id", controller.update)
 //router.patch("/:id", controller.patch)
 

@@ -23,7 +23,6 @@ export default class UserService {
   deleteById = (id: number): void => {
     this.repo.deleteById(id);
   };
-
  
   createUser = (id: number, nom: string, prenom: string, date_de_naissance: string, date_inscription: Date, nationalite: string): UserModel => {
     if (!id || !nom || !prenom || !date_de_naissance || !date_inscription || !nationalite) throw "Il manque un élément";
@@ -34,7 +33,7 @@ export default class UserService {
 
 
   updateUser = (item: UserModel, id: number): UserModel => {
-    if (item.id != id) throw "to do incorrecte";
+    if (item.id != id) throw "User inconnu !";
     const exist = this.getAll().find((data) => data.id == item.id);
     if (!exist) {
       const user = new UserModel(item.id, item.nom, item.prenom, item.date_de_naissance, item.date_inscription, item.nationalite);
@@ -47,13 +46,14 @@ export default class UserService {
       return user;
     }
   };
+  
   /** 
-  patch = (id: number, item: Partial<IPatch>): TodoModel => {
+  patch = (id: number): UserModel => {
     const index = this.getAll().findIndex((data) => data.id == id);
 
     if (!index) throw "id inexistante";
 
-    const data = this.repo.patch(index, item);
+    const data = this.repo.patch(index);
     return data;
   };
   */
